@@ -1,20 +1,20 @@
 # Ambassador
-A simple NGiNX proxy server with inbound traffic secured through Basic Auth with JSON formatted logs.
+A simple NGiNX proxy server with inbound traffic secured through Basic Auth with JSON formatted logs. Credentials are computed at runtime through `entrypoint.sh`.
 
 #### Build
 ```
-docker build -t ambassador:latest .
+docker build -t quantworks/ambassador:latest .
 ```
 
-#### Run
+#### Use
+Run the container.
 ```
 docker run -it \
     -p 80:80 \
     -e DESTINATION=https://min-api.cryptocompare.com \
-    ambassador:latest
+    quantworks/ambassador:latest
 ```
-
-#### Use
+Test it!
 ```
 curl -s 'http://0.0.0.0/data/price?fsym=ETH&tsyms=BTC,USD,EUR' | jq .
 ```
