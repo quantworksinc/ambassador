@@ -1,6 +1,8 @@
 # Ambassador
 A simple NGiNX proxy server with inbound traffic secured through Basic Auth with JSON formatted logs. Credentials are computed at runtime through `entrypoint.sh`.
 
+Get the image at [Docker Hub](https://hub.docker.com/r/quantworks/ambassador/).
+
 #### Build
 ```
 docker build -t quantworks/ambassador:latest .
